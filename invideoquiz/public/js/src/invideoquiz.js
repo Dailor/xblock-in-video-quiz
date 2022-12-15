@@ -26,7 +26,7 @@ function InVideoQuizXBlock(runtime, element) {
     var displayIntervalTimeout = 1500;
 
     $(function () {
-        $('#seq_content .vert-mod .vert').each(function () {
+        function f() {
             var component = $(this);
 
             if (studentMode) {
@@ -34,7 +34,16 @@ function InVideoQuizXBlock(runtime, element) {
             } else {
                 showProblemTimesToInstructor(component);
             }
-        });
+        }
+        
+        const elemenets = $('#seq_content .vert-mod .vert');
+        
+        if(elements.length !==0){
+            elements.each(f);
+        }else{
+            $('main .vert-mod .vert').each(f);
+        }
+        
 
         if (studentMode) {
           knownDimensions = getDimensions();
