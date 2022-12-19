@@ -105,7 +105,7 @@ function InVideoQuizXBlock(runtime, element) {
     
     function addAdditionalStyles(currentProblem){
         currentProblem.css({
-            'position': absolute;
+            'position': 'absolute',
             'padding': '25px 25px 0 25px',
             'background': 'white',
             'box-sizing': 'border-box',
