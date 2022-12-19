@@ -102,6 +102,17 @@ function InVideoQuizXBlock(runtime, element) {
     function resizeInVideoProblem(currentProblem, dimensions) {
         currentProblem.css(dimensions);
     }
+    
+    function addAdditionalStyles(currentProblem){
+        currentProblem.css({
+            'position': absolute;
+            'padding': '25px 25px 0 25px',
+            'background': 'white',
+            'box-sizing': 'border-box',
+            'overflow-y': 'scroll',
+            'z-index': '99'
+        });
+    }
 
     // Bind In Video Quiz display to video time, as well as play and pause buttons
     function bindVideoEvents() {
@@ -135,6 +146,7 @@ function InVideoQuizXBlock(runtime, element) {
                   resizeInVideoProblem(problemToDisplay, getDimensions());
                   problemToDisplay.show();
                   problemToDisplay.css({display: 'block'});
+                  addAdditionalStyles(addAdditionalStyles);
                   canDisplayProblem = false;
                 }
               }
