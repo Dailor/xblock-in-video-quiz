@@ -36,7 +36,7 @@ function InVideoQuizXBlock(runtime, element) {
             }
         }
         
-        const elemenets = $('#seq_content .vert-mod .vert');
+        const elements = $('#seq_content .vert-mod .vert');
         
         if(elements.length !==0){
             elements.each(f);
