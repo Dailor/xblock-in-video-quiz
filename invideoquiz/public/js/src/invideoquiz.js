@@ -146,7 +146,7 @@ function InVideoQuizXBlock(runtime, element) {
                   resizeInVideoProblem(problemToDisplay, getDimensions());
                   problemToDisplay.show();
                   problemToDisplay.css({display: 'block'});
-                  addAdditionalStyles(addAdditionalStyles);
+                  addAdditionalStyles(problemToDisplay);
                   canDisplayProblem = false;
                 }
               }
