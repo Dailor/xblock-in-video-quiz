@@ -127,8 +127,7 @@ function InVideoQuizXBlock(runtime, element) {
             var videoTime = parseInt(videoState.videoPlayer.currentTime, 10);
             var problemToDisplayId = problemTimesMap[videoTime];
             if (problemToDisplayId && canDisplayProblem) {
-              $('.wrapper-downloads, .video-controls', video).hide();
-              $('#seq_content .vert-mod .vert').each(function () {
+              function f() {
                 var isProblemToDisplay = $(this).data('id').indexOf(problemToDisplayId) !== -1;
                 if (isProblemToDisplay) {
                   problemToDisplay = $('.xblock-student_view', this)
@@ -138,7 +137,17 @@ function InVideoQuizXBlock(runtime, element) {
                   problemToDisplay.css({display: 'block'});
                   canDisplayProblem = false;
                 }
-              });
+              }
+                
+              $('.wrapper-downloads, .video-controls', video).hide();
+               
+              const elements = $('#seq_content .vert-mod .vert');
+              
+              if(elements.length !==0){
+                elements.each(f);
+              }else{
+                $('main .vert-mod .vert').each(f);
+              }              
             }
           }, displayIntervalTime);
         });
